@@ -29,7 +29,7 @@ object Main {
     }
     println(message2("Hello World 4"))
 
-    //Type Inference
+    // Type Inference
     // Create a method that does not signify a return type and outputs whatever is given to it, then
     // test it by passing it the follow different data types, Double, String, Integer, Boolean
     def message3(msg: String): Unit ={
@@ -40,6 +40,15 @@ object Main {
       println(msg)
     }
     message3(msg)
+
+    // Create a method that accepts two parameters, one being a string and one being an integer.
+    // You method should return the amount of characters from the end of the string that the integer specifies
+    def message4(message: String, n: Int): String ={
+      message.drop(n)
+    }
+    println(message4("Hello", 2))
+
+
 
 
 
