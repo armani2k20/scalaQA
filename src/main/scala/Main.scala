@@ -131,6 +131,60 @@ object Main {
     } 
     message11("Fizz ", "Buzz", 15)
 
+    // Iteration 4
+    // Rewrite your previous three iteration exercises but using method recursion, no loops involved.
+
+    def message9R(msg: String, n: Int, count: Int = 1): Unit = {
+      println(msg)
+      var x = count + 1
+      if(count < n){
+        message9R(msg, n, x)
+      }
+    }
+    message9R("Hello World", 3)
+
+    def message10R(msg: String, n: Int, count: Int = 1): Unit = {
+      println(msg * n)
+      var x = count + 1
+      if(count < n){
+        message10R(msg, n, x)
+      }
+    }
+    message10R("Hello World ", 3)
+
+    //     def message11(msg1: String, msg2: String , n: Int): Unit = {
+    //   for(i <- 1 to n){
+    //     if(i % 3 == 0 && i % 5 == 0){
+    //       println(msg1.concat(msg2))
+    //     }else if(i % 3 == 0){
+    //       println(msg1)
+    //     }else if(i % 5 == 0){
+    //       println(msg2)
+    //     }else{
+    //       println(i)
+    //     }
+    //   }
+    // } 
+    // message11("Fizz ", "Buzz", 15)
+
+      def message11R(msg1: String, msg2: String, n: Int, count: Int = 1): Unit = {
+      var x = count + 1
+      var newMsg = msg1.concat(msg2)
+      if(count % 3 == 0 && count % 5 == 0){
+        println(newMsg)
+      }else if(count % 3 == 0){
+        println(msg1)
+      }else if(count % 5 == 0){
+        println(msg2)
+      }else{
+        println(count)
+      }
+      if(count < n){
+      message11R(msg1, msg2, n, x)
+      }
+      }
+    message11R("Fizz ", "Buzz", 15, 3)
+
 
   }// end of main method
 
