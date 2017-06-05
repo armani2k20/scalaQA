@@ -48,7 +48,15 @@ object Main {
     }
     println(message4("Hello", 2))
 
-
+    // Strings 2
+    // Create a method that accepts 4 parameters, two being a String and two being a character,
+    // your method will then join both strings together and then replace all occurrences of the
+    // character provided with the second character provided.
+    def message5(msg1: String, msg2: String, m1: Char, m2: Char): String ={
+     var newMsg = msg1.concat(msg2)
+      newMsg.count(_ == 'a')
+    }
+    println( message5("Ha", "llo", 'a', 'e'))
 
 
 
