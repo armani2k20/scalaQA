@@ -1,5 +1,4 @@
 
-
 /**
   * Created by Administrator on 05/06/2017.
   */
@@ -43,25 +42,22 @@ object Main {
 
     // Create a method that accepts two parameters, one being a string and one being an integer.
     // You method should return the amount of characters from the end of the string that the integer specifies
-    def message4(message: String, n: Int): String ={
-      message.drop(n)
-    }
-    println(message4("Hello", 2))
+    def message4(message: String, n: Int): String = message.substring(message.length - n)
+    println(message4("Hello", 3))
 
     // Strings 2
     // Create a method that accepts 4 parameters, two being a String and two being a character,
     // your method will then join both strings together and then replace all occurrences of the
     // character provided with the second character provided.
-    def message5(msg1: String, msg2: String, m1: Char, m2: Char): String ={
-     var newMsg = msg1.concat(msg2)
-      newMsg.count(_ == 'a')
-    }
+    def message5(msg1: String, msg2: String, m1: Char, m2: Char): String = msg1.concat(msg2).replace(m1, m2)
     println( message5("Ha", "llo", 'a', 'e'))
 
-
-
-
-
+    // Operators
+    // Create a method that accepts two Integers as an input, then returns the sum of those integers.
+    def message6(n1: Int, n2: Int): Int = {
+      n1 + n2
+    }
+    println(message6(2,3))
 
   }// end of main method
 
