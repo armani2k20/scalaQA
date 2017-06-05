@@ -50,14 +50,87 @@ object Main {
     // your method will then join both strings together and then replace all occurrences of the
     // character provided with the second character provided.
     def message5(msg1: String, msg2: String, m1: Char, m2: Char): String = msg1.concat(msg2).replace(m1, m2)
-    println( message5("Ha", "llo", 'a', 'e'))
+    println(message5("Ha", "llo", 'a', 'e'))
 
     // Operators
     // Create a method that accepts two Integers as an input, then returns the sum of those integers.
-    def message6(n1: Int, n2: Int): Int = {
-      n1 + n2
-    }
+    def message6(n1: Int, n2: Int): Int = n1 + n2 
     println(message6(2,3))
+
+    //Conditionals
+    // Modify your method from the previous task to accept another parameter, a Boolean. Your
+    // method will now check if that Boolean is true, and if it is then it will return the sum of the
+    // two numbers provided, if it is false it will return the multiplication of the two numbers instead.
+    def message7(n1: Int, n2: Int, Question: Boolean): Int = {
+      
+      if(Question){
+        n1 + n2
+      }else{
+        n1 * n2
+      }
+    } 
+    println(message7(2, 3, false))
+
+    // Conditionals 2
+    // Modify your method from the previous task to have some more conditional statements to
+    // check if one of the numbers is 0, which if this is true then you should return the other non-0 number.
+    def message8(n1: Int, n2: Int, Question: Boolean): Int = {
+      if(n1 == 0 && n2 == 0 ){
+        0
+      }else if(n1 == 0){
+         n2
+      }else if(n2 == 0){
+        n1
+      }
+      else{
+        message7(n1, n2, Question)
+      }
+    } 
+    println(message8(0,0, true))  
+
+    // Iteration
+    // Create a method that accepts two parameters, a string and an integer. Your method should
+    // print out the string provided as many times as the integer designates
+    def message9(msg: String, n: Int): Unit = {
+      for(i <- 1 to n){
+        println(msg)
+      }
+    } 
+    message9("Hello World", 3)
+
+    // Iteration 2
+    // Create a method that accepts two parameters, one a String and the other an integer, your
+    // method will then output that string in a rectangle-like fashion as many times as the number dictates.
+    def message10(msg: String, n: Int): Unit = {
+      for(i <- 1 to n){
+        println(msg * n)
+      }
+    } 
+    message10("Hello World ", 3)
+
+    // Iteration 3 - FizzBuzz
+    // Create a method that accepts three parameters, two strings and one integer. Your method
+    // will then loop from 1 to the integer provided, outputting the current iteration count every iteration.
+    // However if the current iteration is divisible by 3, output the first String provided.
+    // If the current iteration is divisible by 5, output the second String provided.
+    // If it is divisible by both 3 and 5, then output the concatenation of the two Strings. Input-> (Fizz,Buzz,15)
+    // Output-> 1,2,Fizz,4,Buzz,Fizz,7,8,Fizz,Buzz,11,Fizz,13,14,FizzBuzz
+
+    def message11(msg1: String, msg2: String , n: Int): Unit = {
+      for(i <- 1 to n){
+        if(i % 3 == 0 && i % 5 == 0){
+          println(msg1.concat(msg2))
+        }else if(i % 3 == 0){
+          println(msg1)
+        }else if(i % 5 == 0){
+          println(msg2)
+        }else{
+          println(i)
+        }
+      }
+    } 
+    message11("Fizz ", "Buzz", 15)
+
 
   }// end of main method
 
