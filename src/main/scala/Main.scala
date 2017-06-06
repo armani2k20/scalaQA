@@ -2,6 +2,7 @@
 /**
   * Created by Administrator on 05/06/2017.
   */
+  import scala.reflect.ClassTag
 object Main {
 
   def main(args: Array[String]){
@@ -199,11 +200,15 @@ object Main {
 
     // Pattern Matching 2
     // Create a method that takes a pair of integers and then returns the pair swapped around using pattern matching
-
-
-
-
-
+    // Tuple2
+def patternMatch3(n: Any): Any = n match{
+  case (n1, n2) => (n1, n2).swap
+  case List(n1, n2) => List(n2, n1)
+  case Array(n1, n2) => Array(n2, n1)
+  case first :: second :: _ => List(second, first)
+  case _ => "Just switch the numbers"
+}
+println(patternMatch3(List(1,2,3,4)))
 
   }// end of main method
 
