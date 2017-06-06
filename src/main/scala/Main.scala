@@ -152,21 +152,6 @@ object Main {
     }
     message10R("Hello World ", 3)
 
-    //     def message11(msg1: String, msg2: String , n: Int): Unit = {
-    //   for(i <- 1 to n){
-    //     if(i % 3 == 0 && i % 5 == 0){
-    //       println(msg1.concat(msg2))
-    //     }else if(i % 3 == 0){
-    //       println(msg1)
-    //     }else if(i % 5 == 0){
-    //       println(msg2)
-    //     }else{
-    //       println(i)
-    //     }
-    //   }
-    // } 
-    // message11("Fizz ", "Buzz", 15)
-
       def message11R(msg1: String, msg2: String, n: Int, count: Int = 1): Unit = {
       var x = count + 1
       var newMsg = msg1.concat(msg2)
@@ -184,6 +169,24 @@ object Main {
       }
       }
     message11R("Fizz ", "Buzz", 15, 3)
+
+    // Pattern Matching 1
+    // Rewrite your previous conditional exercises to use pattern matching.
+    def patternMatch1(n1: Int, n2: Int, Question: Boolean): Any = Question match {
+      case true => n1 + n2
+      case _ => n1 * n2
+    }
+    println(patternMatch1(2, 3, true))
+
+
+    def patternMatch2(input:Any): Any = input match{
+      case (n1, n2, q) if n1 == 0 && n2 == 0 => "both " + 0
+      case (n1,n2, q) if n1 == 0 => "n2: " + n2
+      case (n1, n2, q) if n2 == 0 => "n1: " + n1
+      case _ => "what?"
+    }
+    println(patternMatch2(0, 0, true))
+
 
 
   }// end of main method
