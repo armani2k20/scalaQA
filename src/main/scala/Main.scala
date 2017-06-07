@@ -2,21 +2,21 @@
 /**
   * Created by Administrator on 05/06/2017.
   */
-  import scala.reflect.ClassTag
+  import java.util
 object Main {
 
   def main(args: Array[String]){
-    // Hello World
-    // Output “Hello World!” via the println() method
+    /*Hello World
+     Output “Hello World!” via the println() method*/
     println("Hello World 1")
 
-    // Assignment
-    // Store “Hello World!” in a variable and then output it.
+    /* Assignment
+    Store “Hello World!” in a variable and then output it.*/
     var msg: String = "Hello World 2"
     println(msg)
 
-    // Parameters
-    // Create a method that accepts a string as a parameter, and then outputs that string.
+    /* Parameters
+    Create a method that accepts a string as a parameter, and then outputs that string.*/
     def message(msg: String): Unit ={
       println(msg)
     }
@@ -210,6 +210,9 @@ def patternMatch3(n: Any): Any = n match{
 }
 println(patternMatch3(List(1,2,3,4)))
 
+    /* Functional 1
+    Using java.util.TimeZone.getAvailableIDs write a single line of code that returns a data set*/
+      java.util.TimeZone.getAvailableIDs.filter(x1 => x1.contains("/")).map(x2 => x2.split('/') last).grouped(10).map(x3 => x3.head).toArray
   }// end of main method
 
 }// end of main object
