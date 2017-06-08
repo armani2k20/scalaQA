@@ -21,10 +21,10 @@ object Intermediate {
     println(blackjack(22,22))
 
     /** 
-    * Unique Sum
-    * Given 3 integer values, return their sum. If one value is the same as another value, they do
-    * not count towards the sum. Aka only return the sum of unique numbers given.
-    */
+      * Unique Sum
+      * Given 3 integer values, return their sum. If one value is the same as another value, they do
+      * not count towards the sum. Aka only return the sum of unique numbers given.
+      */
     def uniqueSum(x: Int, y: Int, z: Int): Any = (x,y,z) match {
       case (x,y,z) if x != y && x != z && y != z =>  x + y + z
       case (x,y,z) if y != x && y != z && z != x=> x + y + z
@@ -33,12 +33,22 @@ object Intermediate {
     }
     println(uniqueSum(1,23,23))
 
-    var data = (temprature, isSummer)
+    /**
+      * Too hot?
+      * Given an integer value and a Boolean value, temperature and isSummer, if temperature is
+      * between 60 and 90 (inclusive), unless its summer where the upper limit is 100 instead of 90.
+      * Return true if the temperature falls within the range, false otherwise.
+      */
     def tooHot(temprature: Int, isSummer: Boolean): Any = (temprature, isSummer) match {
-      case data if temprature >= 60 && temprature <= 90 && isSummer => false
-      case _ => errMsg
+      case (temprature, isSummer) if temprature >= 60 && temprature <= 90 && isSummer => false
+      case (temprature, isSummer) if temprature >= 60 && temprature <= 90 && isSummer != true => true
+      case (temprature, isSummer) if temprature >= 60 && temprature <= 100 && isSummer => true
+      case (temprature, isSummer) if temprature >= 60 && temprature <= 100 && isSummer != true => false
+      case _ => "Temprature too low"
     }
-    println(tooHot(90,true))
+    println(tooHot(20,false))
+
+
 
   }// end of main method
 

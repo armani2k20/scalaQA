@@ -2,7 +2,6 @@
 /**
   * Created by Administrator on 05/06/2017.
   */
-  import java.util
 object Main {
 
   def main(args: Array[String]){
