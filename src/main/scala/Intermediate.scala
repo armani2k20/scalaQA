@@ -44,7 +44,7 @@ object Intermediate {
       case (temprature, isSummer) if temprature >= 60 && temprature <= 90 && isSummer != true => true
       case (temprature, isSummer) if temprature >= 60 && temprature <= 100 && isSummer => true
       case (temprature, isSummer) if temprature >= 60 && temprature <= 100 && isSummer != true => false
-      case _ => "Temprature too low"
+      case _ => "Temperature too low"
     }
     println(tooHot(20,false))
 
