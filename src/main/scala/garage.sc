@@ -1,17 +1,14 @@
-package Garage
+import Garage.{PersonType, VehicleType}
 
 import scala.collection.mutable.ListBuffer
-
-/**
-  * Created by Administrator on 13/06/2017.
-  */
 
 class Garage {
   val vehicle = new ListBuffer[String]()
 
   def addVehicle(id: Int, color: String, brand: String, model: String, licensePlate: String, vehicleType: VehicleType.Value): Unit = {
 
-    vehicle += (id, color, brand, model, licensePlate, vehicleType)
+
+    vehicle += ("1", "audi", "tt", "se321rv", "CAR")
 
   }
 
@@ -42,8 +39,6 @@ class Garage {
   def closeGarage(): Unit = {
 
   }
-
-  println()
 
 
 }
