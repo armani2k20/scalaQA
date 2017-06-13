@@ -48,10 +48,6 @@ object Intermediate {
     }
     println(tooHot(20,false))
 
-
-
-
-
   }// end of main method
 
 }// end of main object

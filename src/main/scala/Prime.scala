@@ -14,6 +14,6 @@ object Prime {
     def display(): Any = {
       1 to 3000000 filter prime foreach println
     }
-    display()
+    display();
   }
 }
