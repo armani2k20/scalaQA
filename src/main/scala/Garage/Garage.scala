@@ -7,30 +7,31 @@ import scala.collection.mutable.ListBuffer
   */
 
 class Garage {
-  val vehicle = new ListBuffer[Vehicle]
 
-  def addVehicle(newVehicle: Vehicle): Unit = {
+  val vehicles = new ListBuffer[Vehicle]()
+  val employees = new ListBuffer[Person]()
 
-    vehicle += newVehicle
+  def addVehicle(newVehicle: Vehicle) = {
+    vehicles += (newVehicle)
   }
 
-  def removeVehicle(id: Int): Unit = {
-    vehicle -= vehicle.filter(x => x.id == id).head
+  def removeVehicle(newVehicle: Vehicle) = {
+    vehicles -= (newVehicle)
   }
 
-  def fixVehicle(id: Int, color: String, brand: String, model: String, licensePlate: String): Unit = {
-
-  }
-
-  def registerEmployee(id: Int, name: String, age: String, personType: PersonType.Value): Unit = {
+  def fixVehicle(): Unit = {
 
   }
 
-  def calculateBills(id: Int, color: String, brand: String, model: String, licensePlate: String): Unit = {
+  def registerEmployee(newEmployee: Person): Unit = {
+    employees.append(newEmployee)
+  }
+
+  def calculateBills(): Unit = {
 
   }
 
-  def garageOutput(id: Int, color: String, brand: String, model: String, licensePlate: String): Unit = {
+  def garageOutput(): Unit = {
 
   }
 
@@ -42,7 +43,8 @@ class Garage {
 
   }
 
-  println()
-
+  override def toString(): String={
+    s"amount of employees is ${employees.length} \nAmount of cars in garage is ${vehicles.length}"
+  }
 
 }
