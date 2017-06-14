@@ -2,7 +2,6 @@
 /**
   * Created by Administrator on 05/06/2017.
   */
-  import java.util
 object Main {
 
   def main(args: Array[String]){
@@ -12,7 +11,7 @@ object Main {
 
     /* Assignment
     Store “Hello World!” in a variable and then output it.*/
-    var msg: String = "Hello World 2"
+    val msg: String = "Hello World 2"
     println(msg)
 
     /* Parameters
@@ -36,7 +35,7 @@ object Main {
 //      var msg: Boolean = true
 //      var msg: Double = 1.1
 //      var msg: Int = 1
-      var msg: String = "Hello world 5"
+      val msg: String = "Hello world 5"
       println(msg)
     }
     message3(msg)
@@ -137,7 +136,7 @@ object Main {
 
     def message9R(msg: String, n: Int, count: Int = 1): Unit = {
       println(msg)
-      var x = count + 1
+      val x = count + 1
       if(count < n){
         message9R(msg, n, x)
       }
@@ -146,7 +145,7 @@ object Main {
 
     def message10R(msg: String, n: Int, count: Int = 1): Unit = {
       println(msg * n)
-      var x = count + 1
+      val x = count + 1
       if(count < n){
         message10R(msg, n, x)
       }
@@ -154,8 +153,8 @@ object Main {
     message10R("Hello World ", 3)
 
       def message11R(msg1: String, msg2: String, n: Int, count: Int = 1): Unit = {
-      var x = count + 1
-      var newMsg = msg1.concat(msg2)
+      val x = count + 1
+      val newMsg = msg1.concat(msg2)
       if(count % 3 == 0 && count % 5 == 0){
         println(newMsg)
       }else if(count % 3 == 0){
