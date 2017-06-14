@@ -1,10 +1,11 @@
 package Garage
-
 /**
   * Created by Administrator on 13/06/2017.
   */
-case class Customer (id: Int, name: String, age: Int) extends Person{
-  val personType = PersonType.CUSTOMER
+class Customer (cu_id: Int, cu_name: String, cu_age: Int) extends Person{
+  var id: Int = cu_id
+  var age: Int = cu_age
+  var name: String = cu_name
 
   override def toString: String = s"name is: $name"
 }
