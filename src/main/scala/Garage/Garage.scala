@@ -7,16 +7,15 @@ import scala.collection.mutable.ListBuffer
   */
 
 class Garage {
-  val vehicle = new ListBuffer[String]()
+  val vehicle = new ListBuffer[Vehicle]
 
-  def addVehicle(id: Int, color: String, brand: String, model: String, licensePlate: String, vehicleType: VehicleType.Value): Unit = {
+  def addVehicle(newVehicle: Vehicle): Unit = {
 
-    vehicle += (id, color, brand, model, licensePlate, vehicleType)
-
+    vehicle += newVehicle
   }
 
   def removeVehicle(id: Int): Unit = {
-    vehicle -= ("1", "audi", "tt", "se321rv", "CAR")
+    vehicle -= vehicle.filter(x => x.id == id).head
   }
 
   def fixVehicle(id: Int, color: String, brand: String, model: String, licensePlate: String): Unit = {
