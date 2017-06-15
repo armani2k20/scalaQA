@@ -2,10 +2,9 @@ package Garage
 /**
   * Created by Administrator on 13/06/2017.
   */
-case class Bike(b_id: Int, b_parts: String) extends Vehicle {
+case class Bike(bikeId: Int) extends Vehicle {
+  var id = bikeId
   var vehicleType = VehicleType.BIKE
-  var id: Int = b_id
-  var parts: String = b_parts
-
-  override def toString: String = s"id is: $id, parts: $parts "
+  addParts()
+  override def toString: String = s"id is: $id, vehicle type: $vehicleType, parts: $parts"
 }

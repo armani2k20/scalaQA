@@ -10,13 +10,14 @@ class Garage {
 
   val vehicles = new ListBuffer[Vehicle]()
   val employees = new ListBuffer[Person]()
+  val maxCost: Int = 500
 
   def addVehicle(newVehicle: Vehicle) = {
     vehicles += (newVehicle)
   }
 
-  def removeVehicle(newVehicle: Vehicle) = {
-    vehicles -= (newVehicle)
+  def removeVehicle(id: Int) = {
+    vehicles -= (vehicles.filter(x => x.id == id).head)
   }
 
   def fixVehicle(): Unit = {
@@ -27,8 +28,8 @@ class Garage {
     employees.append(newEmployee)
   }
 
-  def calculateBills(): Unit = {
-
+  def calculateBills(vehicle: Vehicle): Unit = {
+    vehicle.parts.filter(x => x.broken == true).map(x => x.damageLevel * maxCost).sum
   }
 
   def garageOutput(): Unit = {
@@ -44,7 +45,7 @@ class Garage {
   }
 
   override def toString(): String={
-    s"amount of employees is ${employees.length} \nAmount of cars in garage is ${vehicles.length}"
+    s"amount of employees is ${employees.length} \nAmount of cars in garage is ${vehicles.length}\n$vehicles\n$employees"
   }
 
 }
