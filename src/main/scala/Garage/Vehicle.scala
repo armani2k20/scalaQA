@@ -8,9 +8,10 @@ abstract class Vehicle {
   var id: Int
   var vehicleType: VehicleType.Value
   var isBroken: Boolean
-  var parts: ListBuffer[Parts]
+//  var parts: ListBuffer[Parts] = new ListBuffer()
+//
+//  def addParts(): Unit ={
+//    parts += new Parts(1, 1.2, true, 5)
+//  }
 
-  def addPart(): Unit ={
-    parts += new Parts(1, 1.2, true, 5)
-  }
 }// end of vehicle class
