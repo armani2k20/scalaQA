@@ -21,7 +21,6 @@ class Garage {
   }
 
   def fixVehicle(): Unit = {
-
   }
 
   def registerEmployee(newEmployee: Person): Unit = {
