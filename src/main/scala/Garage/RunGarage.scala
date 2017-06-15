@@ -4,7 +4,7 @@ object RunGarage {
   def main(args: Array[String]): Unit = {
     val garage = new Garage()
     val car = Car(1)
-    val employee = Employee(1, "name", 19)
+    val employee = Employee(1, "name")
     garage.addVehicle(car)
     garage.registerEmployee(employee)
     garage.removeVehicle(car)
