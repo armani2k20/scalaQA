@@ -20,14 +20,16 @@ class Garage {
     vehicles -= (vehicles.filter(x => x.id == id).head)
   }
 
-  def fixVehicle(): Unit = {
+  def fixVehicle(vehicle: Vehicle): Vehicle = {
+    vehicle.parts = vehicle.parts.map(x => if(x.broken) {x.broken = false; x} else x)
+    vehicle
   }
 
   def registerEmployee(newEmployee: Person): Unit = {
     employees.append(newEmployee)
   }
 
-  def calculateBills(vehicle: Vehicle): Unit = {
+  def calculateBills(vehicle: Vehicle): Double = {
     vehicle.parts.filter(x => x.broken == true).map(x => x.damageLevel * maxCost).sum
   }
 
