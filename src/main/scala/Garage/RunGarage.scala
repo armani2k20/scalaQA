@@ -7,6 +7,9 @@ object RunGarage {
     val bike = Bike(2)
     val employee = Employee(1, "gabriel")
 
+    // open garage
+    garage.openGarage()
+
     // add vehicles to garage
     for(i<- 1 to 20) garage.addVehicle(new Car(i))
 
@@ -28,5 +31,8 @@ object RunGarage {
     println(garage)
     println(car)
     println(bike)
+
+    // close garage
+    garage.closeGarage()
   }
 }

@@ -24,12 +24,12 @@ class Garage {
   def fixVehicle(vehicle: Vehicle , employee: Employee): Vehicle = {
     val start = System.currentTimeMillis()
 
-    vehicle.parts = vehicle.parts.map(x => if (x.broken) {x.broken = false; x} else x)
+    vehicle.parts = vehicle.parts.map(x => if (x.broken) {x.broken = false; x.damageLevel = 0.0; x} else x)
 
     val end = System.currentTimeMillis()
     val duration = end - start
 
-    println("duration: " + duration)
+    println("repair duration: " + duration, "employee: " + employee, "results: " + vehicle)
 
     vehicle
 
