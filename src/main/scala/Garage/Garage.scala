@@ -9,7 +9,8 @@ import scala.collection.mutable.ListBuffer
 class Garage {
 
   val vehicles = new ListBuffer[Vehicle]()
-  val employees = new ListBuffer[Person]()
+  var employees = new ListBuffer[Employee]()
+  val occEmployees = new ListBuffer[Employee]()
   val maxCost: Int = 500
   var isOpen: Boolean = false
 
@@ -21,10 +22,14 @@ class Garage {
     vehicles -= (vehicles.filter(x => x.id == id).head)
   }
 
-  def fixVehicle(vehicle: Vehicle , employee: Employee): Vehicle = {
+  def fixVehicle(vehicle: Vehicle, employee: Employee): Vehicle = {
     val start = System.currentTimeMillis()
 
-    vehicle.parts = vehicle.parts.map(x => if (x.broken) {x.broken = false; x.damageLevel = 0.0; x} else x)
+    vehicle.parts = vehicle.parts.map(x => if (x.broken) {
+      x.broken = false;
+      x.damageLevel = 0.0;
+      x
+    } else x)
 
     val end = System.currentTimeMillis()
     val duration = end - start
@@ -35,7 +40,21 @@ class Garage {
 
   }
 
-  def registerEmployee(newEmployee: Person): Unit = {
+  def manageGarage(): Unit = {
+    if (isOpen) {
+      vehicles.foreach(x => {
+        occEmployees += employees.head
+        employees = employees.tail
+        fixVehicle(x, occEmployees.head)
+        employees += occEmployees.head
+        occEmployees -= occEmployees.head
+      })
+    } else {
+      println("garage is closed")
+    }
+  }
+
+  def registerEmployee(newEmployee: Employee): Unit = {
     employees.append(newEmployee)
   }
 

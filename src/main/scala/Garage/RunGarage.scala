@@ -32,6 +32,9 @@ object RunGarage {
     println(car)
     println(bike)
 
+    // manage garage
+    garage.manageGarage()
+
     // close garage
     garage.closeGarage()
   }
