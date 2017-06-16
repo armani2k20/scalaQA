@@ -11,7 +11,7 @@ abstract class Vehicle {
   var parts: ListBuffer[Parts] = new ListBuffer[Parts]
 
   def addParts(): Unit ={
-      var partsBroken = Array(true, true, true, false)
+      val partsBroken = Array(true, true, true, false)
       for(i <- 1 to 10) parts += new Parts(i, partsBroken(i % partsBroken.length), Math.random())
   }
 

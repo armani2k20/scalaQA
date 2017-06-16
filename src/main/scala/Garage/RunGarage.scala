@@ -3,8 +3,9 @@ package Garage
 object RunGarage {
   def main(args: Array[String]): Unit = {
     val garage = new Garage()
-    val car = Car(1)
-    val employee = Employee(1, "name")
+    val car = Car(3)
+    val bike = Bike(2)
+    val employee = Employee(1, "gabriel")
 
     // add vehicles to garage
     for(i<- 1 to 20) garage.addVehicle(new Car(i))
@@ -18,9 +19,14 @@ object RunGarage {
 
     // calculate bill
     garage.calculateBills(car)
+    garage.calculateBills(bike)
+
+    // fix vehicle
+    garage.fixVehicle(car, employee)
+    garage.fixVehicle(bike, employee)
 
     println(garage)
     println(car)
-    println(employee)
+    println(bike)
   }
 }

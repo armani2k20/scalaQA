@@ -11,6 +11,7 @@ class Garage {
   val vehicles = new ListBuffer[Vehicle]()
   val employees = new ListBuffer[Person]()
   val maxCost: Int = 500
+  var isOpen: Boolean = false
 
   def addVehicle(newVehicle: Vehicle) = {
     vehicles += (newVehicle)
@@ -20,9 +21,18 @@ class Garage {
     vehicles -= (vehicles.filter(x => x.id == id).head)
   }
 
-  def fixVehicle(vehicle: Vehicle): Vehicle = {
-    vehicle.parts = vehicle.parts.map(x => if(x.broken) {x.broken = false; x} else x)
+  def fixVehicle(vehicle: Vehicle , employee: Employee): Vehicle = {
+    val start = System.currentTimeMillis()
+
+    vehicle.parts = vehicle.parts.map(x => if (x.broken) {x.broken = false; x} else x)
+
+    val end = System.currentTimeMillis()
+    val duration = end - start
+
+    println("duration: " + duration)
+
     vehicle
+
   }
 
   def registerEmployee(newEmployee: Person): Unit = {
@@ -33,20 +43,12 @@ class Garage {
     vehicle.parts.filter(x => x.broken == true).map(x => x.damageLevel * maxCost).sum
   }
 
-  def garageOutput(): Unit = {
+  def openGarage(): Unit = isOpen = true
 
-  }
+  def closeGarage(): Unit = isOpen = false
 
-  def openGarage(): Unit = {
-
-  }
-
-  def closeGarage(): Unit = {
-
-  }
-
-  override def toString(): String={
-    s"amount of employees is ${employees.length} \nAmount of cars in garage is ${vehicles.length}\n$vehicles\n$employees"
+  override def toString(): String = {
+    f"amount of employees is ${employees.length} \nAmount of cars in garage is ${vehicles.length}, Total cost is: ${vehicles.map(x => calculateBills(x)).sum}%2.2f"
   }
 
 }
